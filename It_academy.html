@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Gen IT Academy</title>
+
+<style>
+:root {
+  --primary: #2563eb;
+  --secondary: #0f172a;
+  --accent: #22c55e;
+  --light: #f8fafc;
+  --text: #334155;
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*  HEADER  */
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/*  HERO  */
+
+.hero {
+  background: linear-gradient(120deg, #2563eb, #1e40af);
+  color: white;
+  padding: 6rem 2rem;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.hero a {
+  display: inline-block;
+  background: var(--accent);
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  color: #022c22;
+  transition: 0.3s;
+}
+
+.hero a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* SECTIONS  */
+
+section {
+  padding: 5rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: var(--secondary);
+}
+
+.section-title p {
+  max-width: 600px;
+  margin: auto;
+  opacity: 0.8;
+}
+
+/*  COURSES  */
+
+.courses-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.course-card img {
+  height: 170px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.course-content h3 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.course-content span {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/*  FEATURES */
+
+.features {
+  background: #f1f5f9;
+}
+
+.features-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 2rem;
+}
+
+.feature {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+}
+
+.feature h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ABOUT  */
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.about h2 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+/*  CONTACT  */
+
+.contact {
+  background: #020617;
+  color: white;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.contact button {
+  background: var(--accent);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background: #16a34a;
+}
+
+/*  FOOTER  */
+
+footer {
+  background: #020617;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #1e293b;
+}
+
+/*  RESPONSIVE */
+
+@media(max-width: 600px){
+  nav ul { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">Next Gen IT</div>
+    <nav>
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <h1>Upgrade Your IT Skills for the Modern Tech Industry</h1>
+      <p>Industry-focused professional courses in Web Development, Cybersecurity, Cloud, and Data Science.</p>
+      <a href="#courses">Explore Courses</a>
+    </div>
+    <img src="https://media.istockphoto.com/id/1588288383/photo/back-view-of-student-raising-his-hand-to-answer-teachers-question-during-education-training.jpg?s=612x612&w=0&k=20&c=ZSyPrLqe6WdE81WXiESD5AqIVw1a7hKv85UI5I-Vwco=" alt="IT learning">
+  </div>
+</section>
+
+<section id="courses">
+  <div class="section-title">
+    <h2>Our Professional Courses</h2>
+    <p>Designed by experts to prepare you for real-world IT careers.</p>
+  </div>
+
+  <div class="courses-grid">
+    <article class="course-card">
+      <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210222183454/How-to-Become-a-Full-Stack-Web-Developer-in-2021.png">
+      <div class="course-content">
+        <h3>Full-Stack Web Development</h3>
+        <p>Master HTML, CSS, and modern backend concepts.</p>
+        <span>Enroll Now →</span>
+      </div>
+    </article>
+
+    <article class="course-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU_9PRtBLegUYGoN5I7p_pODEdZjoNjgpNg&s">
+      <div class="course-content">
+        <h3>Cybersecurity Essentials</h3>
+        <p>Protect systems, networks, and digital assets.</p>
+        <span>Enroll Now →</span>
+      </div>
+    </article>
+
+    <article class="course-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkCnyOgBUuIQcLF5udfPRUVqPRWZNn6iIHYQ&s">
+      <div class="course-content">
+        <h3>Cloud Computing</h3>
+        <p>Learn cloud infrastructure and deployment strategies.</p>
+        <span>Enroll Now →</span>
+      </div>
+    </article>
+
+    <article class="course-card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+      <div class="course-content">
+        <h3>Data Science & AI</h3>
+        <p>Analyze data and build intelligent systems.</p>
+        <span>Enroll Now →</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="features" class="features">
+  <div class="section-title">
+    <h2>Why Choose Next Gen IT?</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature">
+      <h3>Expert Mentors</h3>
+      <p>Learn directly from experienced IT professionals.</p>
+    </div>
+    <div class="feature">
+      <h3>Career-Focused</h3>
+      <p>Practical projects aligned with industry needs.</p>
+    </div>
+    <div class="feature">
+      <h3>Flexible Learning</h3>
+      <p>Self-paced courses with lifetime access.</p>
+    </div>
+    <div class="feature">
+      <h3>Certification</h3>
+      <p>Receive recognized professional certificates.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="about-container">
+    <div>
+      <h2>About Next Gen IT</h2>
+      <p>Next Gen IT Academy is a modern e-learning platform dedicated to delivering high-quality, career-oriented IT education. Our mission is to bridge the gap between academic knowledge and industry demands through expertly crafted courses.</p>
+    </div>
+    <img src="https://play-lh.googleusercontent.com/IfpQGK8M8fNefk0yt2yGk0YE-Vyz0QdVs-H3rm4PPtOxbLR4cPxq4owGfiOb5ARnmvnq" alt="about">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-title">
+    <h2>Contact Us</h2>
+    <p>Have questions? Get in touch with us today.</p>
+  </div>
+
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Next Gen IT Academy | Professional IT Training Platform</p>
+</footer>
+
+</body>
+</html>
